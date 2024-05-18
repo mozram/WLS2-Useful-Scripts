@@ -17,7 +17,7 @@ else
 fi
 
 # Get busid based on device ID
-USB_BUSID=$($USBIPD_BIN wsl list | grep "$USB_ID" | awk '{print $1}')
+USB_BUSID=$($USBIPD_BIN list | grep "$USB_ID" | awk '{print $1}')
 
 # Attach the device, and set auto attach
-$USBIPD_BIN wsl attach -b $USB_BUSID -a
+$USBIPD_BIN attach --wsl -b $USB_BUSID -a
